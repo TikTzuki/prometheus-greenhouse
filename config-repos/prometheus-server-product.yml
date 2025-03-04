@@ -1,0 +1,16 @@
+rasb: 192.168.84.163
+kde: 192.168.84.110
+broker:
+    host: 192.168.84.163
+    port: 1883
+database:
+    host: 192.168.84.110
+    password: Ld201199
+    port: 1521
+    schema: prometheus
+    service: oracle
+    username: prometheus
+debug: true
+server:
+    host: ''
+    port: ''

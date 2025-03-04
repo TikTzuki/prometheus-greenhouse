@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/nav_home">
+    <fragment
+            android:id="@+id/nav_home"
+            android:name="tik.prometheus.mobile.ui.screen.HomeFragment"
+            android:label="@string/menu_home"
+            tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+            android:id="@+id/nav_farm"
+            android:name="tik.prometheus.mobile.ui.screen.farm.FarmFragment"
+            android:label="@string/menu_farm"
+            tools:layout="@layout/fragment_farm"/>
+
+    <fragment
+            android:id="@+id/nav_greenhouse"
+            android:name="tik.prometheus.mobile.ui.screen.greenhouse.GreenhouseFragment"
+            android:label="@string/menu_greenhouse"
+            tools:layout="@layout/fragment_greenhouse"/>
+
+    <fragment
+            android:id="@+id/nav_greenhouse_detail"
+            android:name="tik.prometheus.mobile.ui.screen.greenhouse.GreenhouseDetailFragment"
+            android:label="@string/menu_greenhouse"
+            tools:layout="@layout/fragment_greenhouse_detail"/>
+    <fragment
+            android:id="@+id/nav_sensor"
+            android:name="tik.prometheus.mobile.ui.screen.sensor.SensorFragment"
+            android:label="@string/menu_sensor"
+            tools:layout="@layout/fragment_sensor"/>
+    <fragment
+            android:id="@+id/nav_sensor_detail"
+            android:name="tik.prometheus.mobile.ui.screen.sensor.SensorDetailFragment"
+            android:label="@string/menu_sensor"
+            tools:layout="@layout/fragment_sensor_detail"/>
+    <fragment
+            android:id="@+id/nav_actuator"
+            android:name="tik.prometheus.mobile.ui.screen.actuator.ActuatorFragment"
+            android:label="@string/menu_actuator"
+            tools:layout="@layout/fragment_actuator"/>
+    <fragment
+            android:id="@+id/nav_actuator_detail"
+            android:name="tik.prometheus.mobile.ui.screen.actuator.detail.ActuatorDetailFragment"
+            android:label="@string/menu_actuator_detail"
+            tools:layout="@layout/fragment_actuator_detail"/>
+</navigation>

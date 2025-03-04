@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.screen.sensor.SensorDetailFragment"
+        android:padding="5dp"
+>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clRealTimeSensorValue"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/llSensorDetail"
+            app:layout_constraintTop_toTopOf="parent"
+    >
+        <ImageView
+                android:id="@+id/ivSensorBg"
+                android:src="@drawable/pink_neon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+        />
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/ivSensorBg"
+                app:layout_constraintBottom_toBottomOf="@id/ivSensorBg"
+                app:layout_constraintLeft_toLeftOf="@id/ivSensorBg"
+                app:layout_constraintRight_toRightOf="@id/ivSensorBg"
+                android:orientation="horizontal"
+        >
+            <TextView
+                    android:id="@+id/txtSensorValue"
+                    android:text="000"
+                    android:textSize="100sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+            />
+            <TextView
+                    android:id="@+id/txtSensorUnit"
+                    android:text="m/s"
+                    android:textSize="40sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/ivSensorBg"
+                    app:layout_constraintBottom_toBottomOf="@id/ivSensorBg"
+                    app:layout_constraintLeft_toRightOf="@+id/txtSensorValue"
+            />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+            android:id="@+id/llSensorDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btnSave"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="?backgroundColor"
+    >
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView android:id="@+id/txtGreenhouseLabel"
+                      android:layout_width="wrap_content"
+                      android:textSize="20sp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="5dp"
+                      android:text="Greenhouse:"/>
+            <TextView android:id="@+id/txtGreenhouseValue"
+                      android:textSize="20sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView android:id="@+id/txtIdLabel"
+                      android:layout_width="wrap_content"
+                      android:textSize="20sp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="5dp"
+                      android:text="Id:"/>
+            <TextView android:id="@+id/txtIdValue"
+                      android:textSize="20sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/llLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                      android:layout_width="wrap_content"
+                      android:textSize="20sp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="5dp"
+                      android:text="Label:"/>
+            <TextView android:id="@+id/txtLabelValue"
+                      android:textSize="20sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView android:id="@+id/txtLocalIdLabel"
+                      android:layout_width="wrap_content"
+                      android:textSize="20sp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="5dp"
+                      android:text="Local id:"/>
+            <TextView android:id="@+id/txtLocalIdValue"
+                      android:textSize="20sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/llType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView android:id="@+id/txtTypeLabel"
+                      android:layout_width="wrap_content"
+                      android:textSize="20sp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="5dp"
+                      android:text="Type:"/>
+            <TextView android:id="@+id/txtTypeValue"
+                      android:textSize="20sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/llUnit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+        >
+            <TextView android:id="@+id/txtUnitLabel"
+                      android:layout_width="wrap_content"
+                      android:textSize="20sp"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="5dp"
+                      android:text="Unit:"/>
+            <TextView android:id="@+id/txtUnitValue"
+                      android:textSize="20sp"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/btnSave"
+            android:text="save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

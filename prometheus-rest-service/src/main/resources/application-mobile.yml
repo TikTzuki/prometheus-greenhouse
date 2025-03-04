@@ -1,0 +1,59 @@
+rasb:
+  ip: 192.168.84.163
+kde:
+  ip: 192.168.84.110
+spring:
+  application:
+    name: prometheus-rest
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://home/long/Desktop/repositories/config-repos
+          default-label: master
+  datasource:
+    url: jdbc:oracle:thin:@//127.0.0.1:1521/oracle
+    username: prometheus
+    password: Ld201199
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+  kafka:
+    properties:
+      schema.registry.url: http://${rasb.ip}:8081
+    bootstrap-servers:
+      - ${rasb.ip}:9092
+    consumer:
+      group-id: prometheus
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: info
+      hibernate:
+        sql: off
+        persister:
+          entity: off
+        type:
+          descriptor:
+            sql: off
+broker:
+  host: ${rasb.ip}
+  port: 1883
+server:
+  port: 8000
+decisiontree:
+  url: ${kde.ip}:8009

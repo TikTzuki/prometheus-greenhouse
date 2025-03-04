@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">prometheus-mobile</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Prometheus Greenhouse</string>
+    <string name="nav_header_subtitle">A simple iot project</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_farm">Farm</string>
+    <string name="menu_greenhouse">Greenhouse</string>
+    <string name="menu_sensor">Sensor</string>
+    <string name="menu_actuator">Actuator</string>
+    <string name="menu_actuator_detail">Actuator</string>
+
+
+    <string name="btn_apply_approve">Trình PD</string>
+    <string name="btn_apply_control">Trình KS</string>
+    <string name="btn_approve">Duyệt</string>
+    <string name="btn_close">Đóng</string>
+    <string name="btn_freeze">Phong tỏa</string>
+    <string name="btn_process">Xử lý</string>
+    <string name="btn_return_init">Chuyển trả</string>
+    <string name="save">Save</string>
+    <string name="retry">Retry</string>
+    <string name="los_id">LOS ID</string>
+    <string name="username">Username</string>
+    <string name="state_id">state_id</string>
+    <string name="state_name">state_name</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="sensor_value"><u>sensor value</u></string>
+    <string name="schedule">Schedule</string>
+    <string name="zero">0</string>
+
+    <string name="sensor_type">Sensor type</string>
+    <string name="greenhouse">Greenhouse</string>
+    <string name="action_logout">Logout</string>
+</resources>

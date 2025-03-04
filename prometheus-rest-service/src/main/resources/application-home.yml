@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: prometheus-rest
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://home/tik/Desktop/repositories/prometheus/config-repos
+          default-label: master
+  datasource:
+    url: jdbc:oracle:thin:@//192.168.1.8:1521/oracle
+    username: prometheus
+    password: Ld201199
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: off
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+  kafka:
+    properties:
+      schema.registry.url: http://192.168.1.7:8081
+    bootstrap-servers:
+      - 192.168.1.7:9092
+    consumer:
+      group-id: prometheus
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: info
+      hibernate:
+        sql: off
+        persister:
+          entity: off
+        type:
+          descriptor:
+            sql: off
+broker:
+  host: 192.168.1.7
+  port: 1883
+server:
+  port: 8000
+decisiontree:
+  url: 192.168.1.8:8009

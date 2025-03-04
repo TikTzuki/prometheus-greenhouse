@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="tik.prometheus.mobile">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/ic_prometheus"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/ic_prometheus"
+            android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
+            android:theme="@style/Theme.prometheusmobile"
+            android:name=".ZApplication"
+    >
+        <activity android:exported="true" android:name=".ui.screen.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:name=".ui.screen.LoginActivity">
+        </activity>
+        <activity
+                android:name=".ui.screen.MainActivity"
+                android:exported="true"
+                android:label="@string/app_name"
+                android:theme="@style/Theme.prometheusmobile.NoActionBar">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN"/>-->
+            <!--                <category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--            </intent-filter>-->
+        </activity>
+        <service android:name="org.eclipse.paho.android.service.MqttService"/>
+    </application>
+
+</manifest>

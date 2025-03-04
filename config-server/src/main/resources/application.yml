@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/Prometheus-Greenhouse/config-repos"
+          default-label: master
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /
+server:
+  port: ${PORT:8080}

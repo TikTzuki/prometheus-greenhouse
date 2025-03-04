@@ -1,0 +1,14 @@
+broker:
+  host: 10.40.2.25
+  port: 1883
+database:
+  host: 10.40.3.1
+  password: Ld201199
+  port: 1521
+  schema: prometheus
+  service: oracle
+  username: prometheus
+debug: true
+server:
+  host: ''
+  port: ''

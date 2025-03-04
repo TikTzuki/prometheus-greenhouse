@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                   android:id="@+id/userContainer"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="70dp"
+                                   card_view:cardCornerRadius="4dp"
+                                   card_view:cardElevation="4dp"
+                                   card_view:cardUseCompatPadding="true">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="match_parent"
+                                                       android:background="?android:panelColorBackground"
+                                                       android:padding="5dp"
+                                                       android:orientation="horizontal">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+        >
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/txtUnitValue"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="id"
+                        android:paddingRight="5dp"
+                />
+                <TextView
+                        android:id="@+id/txtUnitShort"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="id"
+                        android:paddingRight="5dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
