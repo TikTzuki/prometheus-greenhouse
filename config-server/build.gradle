@@ -1,0 +1,60 @@
+plugins {
+    id "java-library"
+    id "org.jetbrains.kotlin.jvm" version "2.1.0"
+    id "org.jetbrains.kotlin.plugin.spring" version "1.9.25"
+    id "org.springframework.boot" version "3.4.3"
+    id "io.spring.dependency-management" version "1.1.7"
+    id "com.google.protobuf" version "0.9.4"
+    id "org.jetbrains.kotlin.plugin.lombok" version "2.1.10"
+    id "io.freefair.lombok" version "8.10"
+}
+
+group = "org.tik"
+version = "0.0.1-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+}
+
+ext {
+    springCloudVersion = "2024.0.0"
+}
+
+dependencies {
+    implementation "org.springframework.cloud:spring-cloud-config-server"
+    implementation "io.springfox:springfox-swagger2:3.0.0"
+    implementation "org.springdoc:springdoc-openapi-ui:1.6.6"
+    implementation "org.springdoc:springdoc-openapi-webflux-ui:1.6.4"
+    implementation "org.springdoc:springdoc-openapi-data-rest:1.6.4"
+    developmentOnly "org.springframework.boot:spring-boot-devtools"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll "-Xjsr305=strict"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
