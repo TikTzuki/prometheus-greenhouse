@@ -1,0 +1,87 @@
+plugins {
+    id "java-library"
+    id "org.jetbrains.kotlin.jvm" version "2.1.0"
+    id "org.jetbrains.kotlin.plugin.spring" version "1.9.25"
+    id "org.springframework.boot" version "3.4.3"
+    id "io.spring.dependency-management" version "1.1.7"
+    id "org.jetbrains.kotlin.plugin.lombok" version "2.1.10"
+    id "io.freefair.lombok" version "8.10"
+}
+
+group = "tik.prometheus"
+version = "0.0.1-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://packages.confluent.io/maven/" }
+}
+
+ext {
+    springCloudVersion = "2024.0.0"
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-devtools"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "io.jsonwebtoken:jjwt:0.9.1"
+    implementation "org.springframework.cloud:spring-cloud-config-server"
+    implementation "com.oracle.ojdbc:ojdbc8:19.3.0.0"
+    implementation "org.springframework.security:spring-security-core:5.6.6"
+    implementation "io.springfox:springfox-swagger2:3.0.0"
+    implementation "org.springdoc:springdoc-openapi-ui:1.6.6"
+    implementation "org.springdoc:springdoc-openapi-webflux-ui:1.6.4"
+    implementation "org.springdoc:springdoc-openapi-data-rest:1.6.4"
+    implementation "com.squareup.retrofit2:retrofit:2.7.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.7.0"
+    implementation "org.springframework.cloud:spring-cloud-starter-config"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.7.10"
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:1.7.10"
+    testImplementation "junit:junit:4.13.2"
+    implementation "org.springframework.cloud:spring-cloud-starter-feign:1.4.7.RELEASE"
+    implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5"
+    implementation "com.google.code.gson:gson:2.10"
+    implementation "org.springframework.kafka:spring-kafka"
+    implementation "io.confluent:kafka-schema-registry-client:5.3.0"
+    implementation "org.apache.avro:avro:1.8.2"
+    implementation "io.confluent:kafka-avro-serializer:5.3.0"
+    implementation "org.apache.commons:commons-lang3:3.12.0"
+    testImplementation "com.h2database:h2"
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll "-Xjsr305=strict"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
