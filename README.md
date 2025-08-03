@@ -1,7 +1,3 @@
-Based solely on what's available publicly for the `prometheus-greenhouse` repo (and no explicit README is found online), here’s a professional README draft tailored to its name and context. You'll likely want to fill in or adjust specific implementation details, usage instructions, and asset links.
-
----
-
 # Prometheus‑Greenhouse 🌿
 
 **Prometheus‑Greenhouse** provides an automated, scalable solution to monitor greenhouse environments using Prometheus metrics. Ideal for smart agriculture, indoor farms, or research greenhouses.
@@ -153,4 +149,10 @@ For questions, suggestions, or feature requests:
 
 ---
 
-Let me know if you’d like this to include badges (CI build status, Docker Hub tags), real architecture diagrams, or real examples from your current implementation.
+This repository, Prometheus‑Greenhouse, is part of a graduation project submitted in fulfillment of the requirements for the Engineer degree in IT at Saigon University.
+
+**Authors**
+- **Name**: tiktuzki \
+  **Email**: tranphanthanhlong18@gmail.com
+- **Name**: ngontran123 \
+  **Email**: huynhkiengquan@gmail.com
