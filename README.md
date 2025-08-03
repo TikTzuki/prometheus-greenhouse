@@ -6,6 +6,8 @@ Based solely on what's available publicly for the `prometheus-greenhouse` repo (
 
 **Prometheus‑Greenhouse** provides an automated, scalable solution to monitor greenhouse environments using Prometheus metrics. Ideal for smart agriculture, indoor farms, or research greenhouses.
 
+![overview-architect](./imgs//overview-architect.png)
+
 ---
 
 ## 🚀 Features
